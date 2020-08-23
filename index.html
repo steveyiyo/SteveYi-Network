@@ -1,11 +1,3 @@
-<!--
-    SteveYi 個人網站
-    https://steveyi.net/
-
-    Developed by SteveYi
-    https://about.steveyi.net
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +15,7 @@
             font-family: 'Recursive', sans-serif;
             background-color: #f3f3f3;
         }
-        
+
         h1 {
             text-shadow: #6A6A6A 1px -2px;
             font-weight: 700;
@@ -31,20 +23,20 @@
             display: inline-block;
             vertical-align: middle;
         }
-        
+
         img {
             vertical-align: middle;
         }
-        
+
         .main {
             font-family: 'Recursive', sans-serif;
             padding-top: .3em;
         }
-        
+
         .main p {
             margin-bottom: .5em;
         }
-        
+
         td {
             text-align: left;
             padding: 4px;
@@ -59,49 +51,63 @@
                 <h1><img src="https://static.yiy.tw/static/img/apple-touch-icon-114x114.png"> Yi Network</h1>
                 </div>
                 <h2>About</h2>
-                <p>This is a non-profit ISP for learning, and we maintain <a href="https://bgp.he.net/AS209557">AS209557</a>
+                <p>This is a non-profit ISP for learning, and we maintain <a
+                        href="https://bgp.he.net/AS209557">AS209557</a>
                 </p>
                 <h2>Peering Policy</h2>
-                <p>We have an open peering policy and supports tunneled BGP sessions. Contact peering[#]steveyi.net via email for details</p>
-                <!-- <p>We accept tunnel(GRE, VXLAN, Wireguard) to peering</p> -->
+                <p>We have an open peering policy and supports tunneled BGP sessions. Contact peering[#]steveyi.net via
+                    email for details</p>
+
                 <h2>Locations</h2>
                 <p>Here's a list of Point of Presences of <a href="https://bgp.he.net/AS209557">AS209557</a>:</p>
                 <p>
-                    <table style='border-collapse: collapse;width: 95%;border-spacing: 2px;'>
-                        <tbody style='display: table-row-group;vertical-align: middle;border-color: inherit;'>
-                            <tr>
-                                <th>Location</th>
-                                <th>Port Speed</th>
-                                <th>Supported Tunnel protocol</th>
-                            </tr>
-                            <tr>
-                                <td>Tokyo, JP</td>
-                                <td>1Gbps</td>
-                                <td>GRE Tunnel, WireGuard</td>
-                            </tr>
-                            <tr>
-                                <td>Seattle, US</td>
-                                <td>1Gbps</td>
-                                <td>GRE Tunnel, WireGuard</td>
-                            </tr>
-                            <tr>
-                                <td>Las Vegasm US</td>
-                                <td>1Gbps</td>
-                                <td>GRE Tunnel, WireGuard</td>
-                            <tr>
-                                <td>Zurich, CH</td>
-                                <td>1Gbps</td>
-                                <td>GRE Tunnel, WireGuard</td>
-                            </tr>
-                            <tr>
-                                <td>Changhua, TW</td>
-                                <td>100Mbps</td>
-                                <td>GRE Tunnel, WireGuard</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </p>
-                <br>
+                <table style='border-collapse: collapse;width: 95%;border-spacing: 2px;'>
+                    <tbody style='display: table-row-group;vertical-align: middle;border-color: inherit;'>
+                        <tr>
+                            <th>Location</th>
+                            <th>Port Speed</th>
+                            <th>Supported Tunnel protocol</th>
+                        </tr>
+                        <tr>
+                            <td>Tokyo, JP</td>
+                            <td>1Gbps</td>
+                            <td>GRE Tunnel, WireGuard</td>
+                        </tr>
+                        <tr>
+                            <td>Seattle, US</td>
+                            <td>1Gbps</td>
+                            <td>GRE Tunnel, WireGuard</td>
+                        </tr>
+                        <tr>
+                            <td>Las Vegasm US</td>
+                            <td>1Gbps</td>
+                            <td>GRE Tunnel, WireGuard</td>
+                        <tr>
+                            <td>Zurich, CH</td>
+                            <td>1Gbps</td>
+                            <td>GRE Tunnel, WireGuard</td>
+                        </tr>
+                        <tr>
+                            <td>Changhua, TW</td>
+                            <td>100Mbps</td>
+                            <td>GRE Tunnel, WireGuard</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Statistics</h2>
+                <p>Here's a live list of AS46997 customers and upstreams, powered by <a
+                        href="https://stat.ripe.net">RIPEstat</a>.</p>
+                <script type="application/javascript">
+                    function steveyi(json) {
+                        document.write("<br>Our current upstreams are: ", json.data.neighbours.map((x) => x.asn).join(", "));
+                        document.write("<br><br>Last update:  ", json.data.latest_time);
+
+                    }
+                </script>
+
+                <script type="application/javascript"
+                    src="https://stat.ripe.net/data/asn-neighbours/data.json?resource=209557&callback=steveyi"></script>
+                <br><br>
                 <a href="https://steveyi.net"><button class="btn btn-primary ">Back to Home</button></a>
             </td>
         </tr>
