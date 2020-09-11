@@ -52,7 +52,7 @@
                 </div>
                 <h2>About</h2>
                 <p>This is a non-profit ISP for learning, and we maintain <a
-                        href="https://bgp.he.net/AS209557">AS209557</a>
+                        href="https://bgp.he.net/AS209557">AS209557</a> and <a href="https://bgp.he.net/AS141173">AS141173</a>
                 </p>
                 <h2>Peering Policy</h2>
                 <p>We have an open peering policy and supports tunneled BGP sessions. Contact peering[#]steveyi.net via
@@ -93,21 +93,7 @@
                             <td>GRE Tunnel, WireGuard</td>
                         </tr>
                     </tbody>
-                </table>
-                <h2>Statistics</h2>
-                <p>Here's a live list of AS46997 customers and upstreams, powered by <a
-                        href="https://stat.ripe.net">RIPEstat</a>.</p>
-                <script type="application/javascript">
-                    function steveyi(json) {
-                        document.write("<br>Our current upstreams are: ", json.data.neighbours.map((x) => x.asn).join(", "));
-                        document.write("<br><br>Last update:  ", json.data.latest_time);
-
-                    }
-                </script>
-
-                <script type="application/javascript"
-                    src="https://stat.ripe.net/data/asn-neighbours/data.json?resource=209557&callback=steveyi"></script>
-                <br><br>
+                </table><br>
                 <a href="https://steveyi.net"><button class="btn btn-primary ">Back to Home</button></a>
             </td>
         </tr>
