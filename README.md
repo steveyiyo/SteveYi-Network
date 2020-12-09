@@ -1,4 +1,4 @@
-# Internet.steveyi.net
+# NetWork.steveyi.net
 
 This is my Network engineering logs and website, you can visit https://network.steveyi.net to check it!
 
