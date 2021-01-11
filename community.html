@@ -10,6 +10,7 @@
     @import 'https://fonts.googleapis.com/css2?family=Recursive:wght@600;800&display=swap';
     @import 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap';
     @import 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700&display=swap';
+
     body,
     html {
         font-family: recursive, noto sans sc, noto sans tc, sans-serif;
@@ -23,12 +24,59 @@
             <tr>
                 <td>
                     <h1>Community</h1>
-                    This is Yi-NETWORK's community list, we use this to make filter.<br><br>
-                    <li>Originated by YI-NETWORK: 17413:100</li><br><br>
-                    <li>IP Transit by YI-NETWORK: 17413:200</li><br><br>
-                    <li>STUIT: 17413:300</li><br><br>
-                    <li>Peering with YI-NETWORK: 17413:400</li><br><br>
-                    <li>CLEARNET-TRANSIT(iBGP): 17413:2100</li><br><br>
+                    This is SteveYi Network Service Community<br><br>
+                    <pre>
+                    IX peer export
+                    --------------
+
+                    60614:100XY
+                    where X := {
+                    1 = STUIX,
+                    2 = 4b42 Internet Exchange Point,
+                    3 = BFD-IX,
+                    }, Y := {
+                    0 = do not announce,
+                    1 = prepend 1x,
+                    2 = prepend 2x,
+                    3 = prepend 3x
+                    }
+
+                    example: do not export to STUIX: 60614:10010
+
+                    local preference
+                    ----------------
+
+                    60614:1010X
+                    where X := {
+                    0 = local_pref 0, # lowest
+                    1 = local_pref 20, # transit
+                    2 = local_pref 40, # ix peering
+                    3 = local_pref 100, # default customer
+                    4 = local_pref 110, # higher than default customer
+                    }
+
+                    example: set local_pref 0: 60614:10100
+
+                    upstream export
+                    ---------------
+
+                    60614:102XY
+                    where X := {
+                    0 = AS20473, # Choopa, LLC
+                    1 = AS34854, # Staclar Carrier Ltd.
+                    2 = AS34927, # iFog GmbH
+                    3 = AS46997, # Nato Research Ltd.
+                    4 = AS49752, # Jori Vanneste
+                    5 = AS212425 # Ming-Chien Lee
+                    }, Y := {
+                    0 = do not announce,
+                    1 = prepend 1x,
+                    2 = prepend 2x,
+                    3 = prepend 3x
+                    }
+
+                    example: do not export to Choopa: 60614:10200
+                </pre>
                 </td>
             </tr>
         </tbody>
