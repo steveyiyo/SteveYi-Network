@@ -27,91 +27,81 @@
             vertical-align: middle;
         }
 
-        .main {
-            font-family: 'Recursive', sans-serif;
-            padding-top: .3em;
-        }
-
-        .main p {
-            margin-bottom: .5em;
-        }
-
-        td {
+        tr {
             text-align: left;
             padding: 4px;
+        }
+
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
         }
     </style>
 </head>
 
 <body>
-    <table style='width:auto;margin:auto;'>
-        <tr>
-            <td>
-                <h1>SteveYi Network Service
-                </h1>
-                </div>
-                <h2>About</h2>
-                This is a non-profit ISP for learning, and we maintain <a href="https://bgp.he.net/AS60614/">
-                    AS60614</a> and <a href="https://bgp.he.net/AS209557">AS209557</a>.
-                <h2>Peering Policy</h2>
-                <ul>
-                    <li> Peering contact must be available on <a href="https://www.peeringdb.com/">PeeringDB</a>.</li>
-                    <li> Accept IXP, Tunnel or Physical Peering.</li>
-                    <li> A publicly routable ASN.</li>
-                    <li> Support AS-SET filter.</li>
-                    <li> No SLAs.</li>
-                    <li> One or more public routable IPv4 and/or IPv6 address space.</li>
-                </ul>
-                <h2>Location</h2>
-                <li> Our POP currently in Japan, Germany, USA, Taiwan, HongKong.</li>
-
-                <h2>Network Details</h2>
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <th scope="row">Network Name</th>
-                            <td>YINETWORK</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">AS Number</th>
-                            <td>AS60614</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">AS Macro</th>
-                            <td><a
-                                    href="https://www.radb.net/query?advanced_query=&keywords=AS-YINETWORK&-T+option=&ip_option=&-i+option=">AS-YINETWORK</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Suggested Prefix Limit</th>
-                            <td>10 (IPv4) / 100 (IPv6)</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Peering / NOC Contact</th>
-                            <td><a href="mailto:noc@steveyi.net">noc@steveyi.net</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Peering Information</th>
-                            <td><a
-                                    href="https://network.steveyi.net/#peering/">https://network.steveyi.net/#peering/</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">PeeringDB</th>
-                            <td><a href="https://www.peeringdb.com/asn/60614/">https://www.peeringdb.com/asn/60614/</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2>Partnerships</h2>
-                We share some infrastructures and operate another's network with edisonlee55 Network (AS212425).
-                <h2>Website</h2>
-                <a href="https://lg.steveyi.net/">Looking Glass</a><br>
-                <a href="resources.html">Resources</a><br>
-                <a href="thankyou.html">Special Thanks</a><br>
-            </td>
-        </tr>
-    </table>
+    <div class="container">
+        <h1>SteveYi Network Service
+        </h1>
+        <h2>About</h2>
+        This is a non-profit ISP for learning, and we maintain <a href="https://bgp.he.net/AS60614/">
+            AS60614</a> and <a href="https://bgp.he.net/AS209557">AS209557</a>.
+        <h2>Peering Policy</h2>
+        <ul>
+            <li> Peering contact must be available on <a href="https://www.peeringdb.com/">PeeringDB</a>.</li>
+            <li> Accept IXP, Tunnel or Physical Peering.</li>
+            <li> A publicly routable ASN.</li>
+            <li> Support AS-SET filter.</li>
+            <li> No SLAs.</li>
+            <li> One or more public routable IPv4 and/or IPv6 address space.</li>
+        </ul>
+        <h2>Location</h2>
+        <ul>
+            <li> Our POP currently in Japan, Germany, USA, Taiwan, HongKong.</li>
+        </ul>
+        <h2>Network Details</h2>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th scope="row">Network Name</th>
+                    <td>YINETWORK</td>
+                </tr>
+                <tr>
+                    <th scope="row">AS Number</th>
+                    <td>AS60614</td>
+                </tr>
+                <tr>
+                    <th scope="row">AS Macro</th>
+                    <td><a href="https://www.radb.net/query?advanced_query=&keywords=AS-YINETWORK&-T+option=&ip_option=&-i+option=">AS-YINETWORK</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Suggested Prefix Limit</th>
+                    <td>10 (IPv4) / 100 (IPv6)</td>
+                </tr>
+                <tr>
+                    <th scope="row">Peering / NOC Contact</th>
+                    <td><a href="mailto:noc@steveyi.net">noc@steveyi.net</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Peering Information</th>
+                    <td><a href="https://network.steveyi.net/#peering/">https://network.steveyi.net/#peering/</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">PeeringDB</th>
+                    <td><a href="https://www.peeringdb.com/asn/60614/">https://www.peeringdb.com/asn/60614/</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Partnerships</h2>
+        We share some infrastructures and operate another's network with edisonlee55 Network (AS212425).
+        <h2>Website</h2>
+        <a href="https://lg.steveyi.net/">Looking Glass</a><br>
+        <a href="resources.html">Resources</a><br>
+        <a href="thankyou.html">Special Thanks</a><br>
+    </div>
 </body>
 
 </html>
