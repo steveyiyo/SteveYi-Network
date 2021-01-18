@@ -11,7 +11,7 @@ config
 $v4_filter
 $v6_filter
 route-map $asn_v4 permit 5
-match ipv4 address prefix-list $asn_v4
+match ip address prefix-list $asn_v4
 route-map $asn_v6 permit 5
 match ipv6 address prefix-list $asn_v6
 exit
