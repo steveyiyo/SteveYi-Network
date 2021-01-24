@@ -17,5 +17,3 @@ exit
 write
 exit
 EOF
-
-done
