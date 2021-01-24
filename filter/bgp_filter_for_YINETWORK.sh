@@ -8,9 +8,9 @@
 config
 $v4_filter
 $v6_filter
-route-map CLEARNET permit 5
+route-map CLEARNET_v4 permit 5
 match ip address prefix-list CLEARNET_v4
-route-map CLEARNET permit 5
+route-map CLEARNET_v6 permit 5
 match ipv6 address prefix-list CLEARNET_v6
 exit
 exit
