@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="logo.png">
     <title>SteveYi Network Service</title>
-    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@600;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Open Graph protocol -->
+    <meta property="og:title" content="SteveYi Network Service" />
+    <meta property="og:url" content="https://network.steveyi.net/" />
+    <meta property="og:image" content="https://static.yiy.tw/static/img/og/network.steveyi.net.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="SteveYi Network Service" />
+    <meta property="og:site_name" content="SteveYi Network Service" />
+    <!-- CSS and JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
+    <link rel="icon" href="logo.png">
     <style>
         body,
         html {
-            font-family: 'Recursive', sans-serif;
-            background-color: #f3f3f3;
+            font-weight: bold;
         }
         
-        h1 {
-            text-shadow: #6A6A6A 1px -2px;
-            font-weight: 700;
-            font-size: 50px;
-            display: inline-block;
-            vertical-align: middle;
+        #app {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
-        img {
-            vertical-align: middle;
+        #container {
+            padding-top: 16px;
+            flex: 1;
+            width: 700px;
         }
         
         tr {
@@ -32,75 +41,105 @@
             padding: 4px;
         }
         
-        .container {
-            max-width: 768px;
-            margin: 0 auto;
+        #footer {
+            text-align: center;
+            padding: 16px 0;
+            margin-top: 16px;
+        }
+        
+        .ts.web.embed img {
+            height: auto;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>SteveYi Network Service</h1>
-        <h2>About</h2>
-        This is a non-profit ISP for learning, and we maintain <a href="https://bgp.he.net/AS60614/">
-            AS60614</a> and <a href="https://bgp.he.net/AS209557">AS209557</a>.
-        <h2>Peering Policy</h2>
-        <ul>
-            <li> Peering contact must be available on <a href="https://www.peeringdb.com/">PeeringDB</a>.</li>
-            <li> Accept IXP, Tunnel or Physical Peering.</li>
-            <li> A publicly routable ASN.</li>
-            <li> Support AS-SET filter.</li>
-            <li> No SLAs.</li>
-            <li> One or more public routable IPv4 and/or IPv6 address space.</li>
-        </ul>
-        <h2>Location</h2>
-        <ul>
-            <li> Our POP currently in Japan, Germany, USA, Taiwan, HongKong.</li>
-        </ul>
-        <h2>Network Details</h2>
-        <table class="table table-striped">
-            <tbody>
-                <tr>
-                    <th scope="row">Network Name</th>
-                    <td>YINETWORK</td>
-                </tr>
-                <tr>
-                    <th scope="row">AS Number</th>
-                    <td>AS60614</td>
-                </tr>
-                <tr>
-                    <th scope="row">AS Macro</th>
-                    <td><a href="https://www.radb.net/query?advanced_query=&keywords=AS-YINETWORK&-T+option=&ip_option=&-i+option=">AS-YINETWORK</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Suggested Prefix Limit</th>
-                    <td>10 (IPv4) / 100 (IPv6)</td>
-                </tr>
-                <tr>
-                    <th scope="row">Peering / NOC Contact</th>
-                    <td>Please check it on the <a href="https://www.peeringdb.com/asn/60614">PeeringDB</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">Peering Information</th>
-                    <td><a href="https://network.steveyi.net/#peering/">https://network.steveyi.net/#peering/</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">PeeringDB</th>
-                    <td><a href="https://www.peeringdb.com/asn/60614/">https://www.peeringdb.com/asn/60614/</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <h2>Partnerships</h2>
-        We share some infrastructures and operate another's network with edisonlee55 Network (AS212425).
-        <h2>Website</h2>
-        <a href="https://lg.steveyi.net/">Looking Glass</a><br>
-        <a href="resources.html">Resources</a><br>
-        <a href="thankyou.html">Special Thanks</a><br>
-        <a href="news.html">News</a><br>
+    <div id="app">
+        <div class="ts padded horizontally fitted fluid slate">
+            <div class="ts very narrow container">
+                <div class="ts basic menu">
+                    <div class="right menu">
+                        <a class="item" hhref="/">Home</a>
+                        <a class="item" href="news.html">News</a>
+                        <a class="item" href="location.html">Location</a>
+                        <a class="item" href="connections.html">Connections</a>
+                        <a class="item" href="resources.html">Resources</a>
+                        <a class="item" href="thankyou.html">Special Thanks</a>
+                    </div>
+                </div>
+                <h1 class="ts header">SteveYi Network Service
+                </h1>
+            </div>
+        </div>
+        <div class="ts very narrow container" id="container">
+            <h2 class="ts header">About</h2>
+            <p>This is a non-profit ISP for learning, and we maintain <a href="https://whois.steveyi.net/whois/AS60614">
+                AS60614</a> and <a href="https://whois.steveyi.net/whois/AS209557">AS209557</a>.</p>
+            <h2 class="ts header" id="peering" name="peering">Peering Policy</h2>
+            <ul>
+                <li> Peering contact must be available on PeeringDB.</li>
+                <li> Accept IXP, Tunnel or Physical Peering.</li>
+                <li> A publicly routable ASN.</li>
+                <li> Support AS-SET filter.</li>
+                <li> No SLAs.</li>
+                <li> One or more public routable IPv4 and/or IPv6 address space.</li>
+            </ul>
+            <h2 class="ts header">Location</h2>
+            <p>
+                Our POP currently in Japan, Germany, USA, Taiwan, HongKong.
+            </p>
+            <h2 class="ts header">Network Details</h2>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Network Name</th>
+                        <td>YINETWORK</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">AS Number</th>
+                        <td>AS60614</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">AS Macro</th>
+                        <td><a href="https://whois.steveyi.net/whois/RADB/AS-YINETWORK">AS-YINETWORK</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Suggested Prefix Limit</th>
+                        <td>10 (IPv4) / 100 (IPv6)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Peering / NOC Contact</th>
+                        <td>Please check it on the <a href="https://www.peeringdb.com/asn/60614">PeeringDB</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Peering Information</th>
+                        <td><a href="https://network.steveyi.net/#peering/">https://network.steveyi.net/#peering/</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PeeringDB</th>
+                        <td><a href="https://www.peeringdb.com/asn/60614/">https://www.peeringdb.com/asn/60614/</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 class="ts header">Partnerships</h2>
+            <p>We share some infrastructures and operate another's network with edisonlee55 Network (AS212425). </p>
+            <h2 class="ts header">Member of</h2>
+            <a href="https://www.manrs.org/isps/participants/entry/1484/">
+                <img height="25%" width="25%" src="https://www.manrs.org/wp-content/uploads/2018/03/MANRS_RGB_horizontal_logo_dark-768x190.jpg">
+            </a>
+        </div>
+        <div class="ts fitted fluid slate" id="footer">
+            <div class="ts very narrow container">
+                Copyright © 2019 -
+                <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                </script>
+                <a href="https://network.steveyi.net/">SteveYi Network Service</a> All rights reserved.
+            </div>
+        </div>
     </div>
 </body>
 
