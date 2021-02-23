@@ -2,8 +2,8 @@
 
 whois -h whois.radb.net '!i'"AS-STEVEYI-A" | sed '2!d; s/ /\n/g' | while read -r asn; do
     echo "$asn"
-    v4_filter="$(bgpq3 -4l $asn"_v4" "$asn" -R 24)"
-    v6_filter="$(bgpq3 -6l $asn"_v6" "$asn" -R 48)"
+    v4_filter="$(bgpq3 -4l $asn"_v4" "$asn" -R 24 -m 24)"
+    v6_filter="$(bgpq3 -6l $asn"_v6" "$asn" -R 48 -m 48)"
     asn_v4=${asn}_v4
     asn_v6=${asn}_v6
     vtysh <<EOF
