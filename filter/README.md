@@ -11,5 +11,5 @@ apt install whois && bgpq3
 
 For CentOS
 ```
-apt install whois && bgpq3
+yum install whois && bgpq3
 ```
