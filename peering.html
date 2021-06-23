@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SteveYi</title>
+    <title>Peering</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- OG -->
     <meta property="og:title" content="SteveYi" />
@@ -30,6 +30,20 @@
             font-family: 'Roboto', sans-serif;
         }
         
+        .container {
+            width: 100%;
+            padding: 12px;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 500px;
+            font-weight: bold;
+        }
+        
+        .body {
+            justify-content: center;
+            text-align: left;
+        }
+        
         .menu {
             text-align: center;
             width: 100%;
@@ -54,13 +68,32 @@
             cursor: pointer;
         }
         
-        .container {
+        tr {
+            text-align: left;
+            padding: 4px;
+        }
+        
+        table {
+            border-collapse: collapse;
             width: 100%;
-            padding: 12px;
-            margin-right: auto;
-            margin-left: auto;
-            max-width: 900px;
-            font-weight: bold;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 4px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #e6e6e6;
+        }
+        
+        th {
+            border-bottom: 2px solid #333;
+        }
+        
+        td {
+            border-bottom: 2px solid #333;
         }
     </style>
 </head>
@@ -78,8 +111,47 @@
         </div>
     </div>
     <div class="container">
-        <h1>Welcome</h1>
-        <p>This is the SteveYi Network Website, we maintain AS60614, AS141173 and AS209557.</p>
+        <h1>Peering Policy</h1>
+        <ul>
+            <li>Peering contact must be available on PeeringDB.</li>
+            <li>Accept IXP, Tunnel or Physical Peering.</li>
+            <li>A publicly routable ASN.</li>
+            <li>Support AS-SET filter.</li>
+            <li>No SLAs.</li>
+            <li>One or more public routable IPv4 or IPv6 address space.</li>
+        </ul>
+        <h2>Network Details</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th scope="row">Network Name</th>
+                    <td>YINETWORK (SteveYi Network Service)</td>
+                </tr>
+                <tr>
+                    <th scope="row">AS Number</th>
+                    <td>AS60614</td>
+                </tr>
+                <tr>
+                    <th scope="row">AS Macro</th>
+                    <td><a href="https://whois.steveyi.net/RADB/AS-YINETWORK">AS-YINETWORK</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Suggested Prefix Limit</th>
+                    <td>50 (IPv4) / 100 (IPv6)</td>
+                </tr>
+                <tr>
+                    <th scope="row">PeeringDB</th>
+                    <td><a href="https://www.peeringdb.com/asn/60614/">https://www.peeringdb.com/asn/60614/</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br> If you want to peer with us, please send an email to <a href="mailto:peering@steveyi.net">peering@steveyi.net</a> .
     </div>
 </body>
 

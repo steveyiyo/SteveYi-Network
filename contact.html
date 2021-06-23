@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SteveYi</title>
+    <title>Contact us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- OG -->
     <meta property="og:title" content="SteveYi" />
@@ -30,6 +30,15 @@
             font-family: 'Roboto', sans-serif;
         }
         
+        .container {
+            font-weight: bold;
+            width: 100%;
+            padding: 12px;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 600px;
+        }
+        
         .menu {
             text-align: center;
             width: 100%;
@@ -54,13 +63,32 @@
             cursor: pointer;
         }
         
-        .container {
+        tr {
+            text-align: left;
+            padding: 4px;
+        }
+        
+        table {
+            border-collapse: collapse;
             width: 100%;
-            padding: 12px;
-            margin-right: auto;
-            margin-left: auto;
-            max-width: 900px;
-            font-weight: bold;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 4px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #e6e6e6;
+        }
+        
+        th {
+            border-bottom: 2px solid #333;
+        }
+        
+        td {
+            border-bottom: 2px solid #333;
         }
     </style>
 </head>
@@ -78,8 +106,34 @@
         </div>
     </div>
     <div class="container">
-        <h1>Welcome</h1>
-        <p>This is the SteveYi Network Website, we maintain AS60614, AS141173 and AS209557.</p>
+        <h1>Contact Us</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Network Name</th>
+                    <th>SteveYi Network</th>
+                </tr>
+                <tr>
+                    <th>ASN</th>
+                    <th>60614</th>
+                </tr>
+                <tr>
+                    <th>AS Macro (AS-SET)</th>
+                    <th>AS-STEVEYI</th>
+                </tr>
+                <tr>
+                    <th>Suggested Prefix Limit</th>
+                    <th>50 (IPv4) / 100 (IPv6)</th>
+                </tr>
+            </tbody>
+        </table>
+        <p>For Peering Request, please send an email to <a href="mailto:peering@steveyi.net">peering@steveyi.net</a> .</p>
+        <p>For Network Problem, please send an email to <a href="mailto:noc@steveyi.net">noc@steveyi.net</a> .</p>
+        <p>If you want to ask something with us, please send an email to <a href="mailto:jackcooku@steveyi.net">jackcooku@steveyi.net</a> .</p>
     </div>
 </body>
 

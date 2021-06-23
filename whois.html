@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SteveYi</title>
+    <title>Whois Searching</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- OG -->
     <meta property="og:title" content="SteveYi" />
@@ -19,15 +19,26 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <!-- ICON -->
     <link rel="icon" href="https://static.yiy.tw/static/img/apple-touch-icon-114x114.png">
     <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Style -->
     <style>
         body,
         html {
             font-family: 'Roboto', sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            padding: 12px;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 300px;
         }
         
         .menu {
@@ -54,13 +65,11 @@
             cursor: pointer;
         }
         
-        .container {
-            width: 100%;
-            padding: 12px;
-            margin-right: auto;
-            margin-left: auto;
-            max-width: 900px;
-            font-weight: bold;
+        .whois pre {
+            font-family: 'Share Tech Mono', monospace;
+            text-align: left;
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
@@ -77,10 +86,48 @@
             </ul>
         </div>
     </div>
-    <div class="container">
-        <h1>Welcome</h1>
-        <p>This is the SteveYi Network Website, we maintain AS60614, AS141173 and AS209557.</p>
+    <br>
+    <div class="container" id="app">
+        <h1>Whois Search</h1>
+        <div class="ts clearing segment">
+            <form class="form" @submit.prevent="search()">
+                <label>Target: </label>
+                <input placeholder="AS60614" type="text" v-model="IP">
+                <br>
+                <br> Test query for <a @click="search('AS60614')">AS60614 </a><span v-if="userIP" style="margin: 0 .2em;">or</span>
+                <a v-if="userIP" @click="search(userIP)">${userIP}</a>
+                <button class="button" :class="{loading}">Search!</button>
+            </form>
+        </div>
+        <div class="whois" v-if="result">
+            <pre>${result}</pre>
+        </div>
+        <br />
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.5/vue.global.prod.js"></script>
+    <script>
+        const App = {
+            delimiters: ['${', '}'],
+            async created() {
+                this.userIP = (await axios('https://ip.steveyi.net/ip/')).data.IP
+            },
+            data: () => ({
+                userIP: null,
+                year: new Date().getFullYear(),
+                result: null,
+                IP: '',
+                loading: false
+            }),
+            methods: {
+                async search(target) {
+                    this.loading = true
+                    this.result = (await axios(`https://whois.steveyi.net/whois/${target || this.IP}`)).data
+                    this.loading = false
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
 </body>
 
 </html>
