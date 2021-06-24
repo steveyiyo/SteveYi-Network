@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Contact us</title>
+    <title>System State</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- OG -->
     <meta property="og:title" content="SteveYi" />
@@ -22,7 +22,7 @@
     <!-- ICON -->
     <link rel="icon" href="https://static.yiy.tw/static/img/apple-touch-icon-114x114.png">
     <!-- Vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <!-- Style -->
     <style>
         body,
@@ -31,12 +31,11 @@
         }
         
         .container {
-            font-weight: bold;
             width: 100%;
             padding: 12px;
             margin-right: auto;
             margin-left: auto;
-            max-width: 600px;
+            max-width: 900px;
         }
         
         .menu {
@@ -105,36 +104,72 @@
             </ul>
         </div>
     </div>
-    <div class="container">
-        <h1>Contact Us</h1>
+    <div class="container" id="app">
+        <h2>Network Details</h2>
+        <h3>IPv4 BGP Session</h3>
         <table>
             <tbody>
                 <tr>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th>Network Name</th>
-                    <th>SteveYi Network</th>
-                </tr>
-                <tr>
                     <th>ASN</th>
-                    <th>60614</th>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>Uptime</th>
+                    <th>Import Route</th>
+                    <th>Export Route</th>
                 </tr>
-                <tr>
-                    <th>AS Macro (AS-SET)</th>
-                    <th>AS-STEVEYI</th>
-                </tr>
-                <tr>
-                    <th>Suggested Prefix Limit</th>
-                    <th>50 (IPv4) / 100 (IPv6)</th>
+                <tr v-for="(value, key) in IPv4_Session">
+                    <th>{{value.remoteAs}}</th>
+                    <th></th>
+                    <th>{{ value.state }}</th>
+                    <th>{{ value.peerUptime }}</th>
+                    <th>{{ value.pfxRcd }}</th>
+                    <th>{{ value.pfxSnt }}</th>
                 </tr>
             </tbody>
         </table>
-        <p>For Peering Request, please send an email to <a href="mailto:peering@steveyi.net">peering@steveyi.net</a> .</p>
-        <p>For Network Problem, please send an email to <a href="mailto:noc@steveyi.net">noc@steveyi.net</a> .</p>
-        <p>If you want to ask something with us, please send an email to <a href="mailto:jackcooku@steveyi.net">jackcooku@steveyi.net</a> .</p>
+        <h3>IPv6 BGP Session</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <th>ASN</th>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>Uptime</th>
+                    <th>Import Route</th>
+                    <th>Export Route</th>
+                </tr>
+                <tr v-for="(value, key) in IPv6_Session">
+                    <th>{{value.remoteAs}}</th>
+                    <th></th>
+                    <th>{{ value.state }}</th>
+                    <th>{{ value.peerUptime }}</th>
+                    <th>{{ value.pfxRcd }}</th>
+                    <th>{{ value.pfxSnt }}</th>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                var asn;
+                return {
+                    IPv4_Session: {},
+                    IPv6_Session: {},
+                }
+            },
+            mounted() {
+                axios
+                    .get('https://api.network.steveyi.net/state/hk-router.json')
+                    .then(response => {
+                        this.IPv4_Session = response.data.ipv4Unicast.peers
+                        this.IPv6_Session = response.data.ipv6Unicast.peers
+                    })
+            }
+        })
+    </script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Contact us</title>
+    <title>System State</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- OG -->
     <meta property="og:title" content="SteveYi" />
@@ -22,7 +22,7 @@
     <!-- ICON -->
     <link rel="icon" href="https://static.yiy.tw/static/img/apple-touch-icon-114x114.png">
     <!-- Vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <!-- Style -->
     <style>
         body,
@@ -31,12 +31,11 @@
         }
         
         .container {
-            font-weight: bold;
             width: 100%;
             padding: 12px;
             margin-right: auto;
             margin-left: auto;
-            max-width: 600px;
+            max-width: 500px;
         }
         
         .menu {
@@ -105,8 +104,8 @@
             </ul>
         </div>
     </div>
-    <div class="container">
-        <h1>Contact Us</h1>
+    <div class="container" id="app">
+        <h2>BGP Session</h2>
         <table>
             <tbody>
                 <tr>
@@ -114,26 +113,23 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <th>Network Name</th>
-                    <th>SteveYi Network</th>
+                    <th><a href="/status/hk-router.html">HK-Router</a></th>
+                    <th><a href="/status/jp-router.html">JP-Router</th>
                 </tr>
                 <tr>
-                    <th>ASN</th>
-                    <th>60614</th>
+                    <th><a href="/status/jp-oracle.html">JP-Oracle</th>
+                    <th><a href="/status/eu-router.html">EU-Router</th>
                 </tr>
                 <tr>
-                    <th>AS Macro (AS-SET)</th>
-                    <th>AS-STEVEYI</th>
+                    <th><a href="/status/nchc-router.html">NCHC-Router</th>
+                    <th><a href="/status/us-fmt2.html">US-FMT2</th>
                 </tr>
                 <tr>
-                    <th>Suggested Prefix Limit</th>
-                    <th>50 (IPv4) / 100 (IPv6)</th>
+                    <th><a href="/status/tw-tfn.html">TW-TFN</th>
+                    <th></th>
                 </tr>
             </tbody>
         </table>
-        <p>For Peering Request, please send an email to <a href="mailto:peering@steveyi.net">peering@steveyi.net</a> .</p>
-        <p>For Network Problem, please send an email to <a href="mailto:noc@steveyi.net">noc@steveyi.net</a> .</p>
-        <p>If you want to ask something with us, please send an email to <a href="mailto:jackcooku@steveyi.net">jackcooku@steveyi.net</a> .</p>
     </div>
 </body>
 
