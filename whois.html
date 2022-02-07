@@ -16,62 +16,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="SteveYi Network" />
     <meta property="og:site_name" content="SteveYiNetwork" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <!-- ICON -->
     <link rel="icon" href="https://static.yiy.tw/static/img/apple-touch-icon-114x114.png">
     <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- Style -->
-    <style>
-        body,
-        html {
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        .container {
-            width: 100%;
-            padding: 12px;
-            margin-right: auto;
-            margin-left: auto;
-            max-width: 300px;
-        }
-        
-        .menu {
-            text-align: center;
-            width: 100%;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-        }
-        
-        .menu ul {
-            display: inline-block;
-        }
-        
-        .menu li {
-            float: left;
-            list-style: none;
-            margin: 0px 50px 0px 0px;
-            font-size: 16px;
-        }
-        
-        .menu li a {
-            text-decoration: none;
-            color: #000000;
-            transition: color linear 0.15s;
-            cursor: pointer;
-        }
-        
-        .whois pre {
-            font-family: 'Share Tech Mono', monospace;
-            text-align: left;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="asset/style.css">
 </head>
 
 <body>
@@ -80,7 +32,7 @@
             <ul>
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/whois.html">Whois</a></li>
-                <li><a href="/status/">Locations (State)</a></li>
+                <li><a href="/status.html">Locations (State)</a></li>
                 <li><a href="/peering.html">Peering</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
@@ -89,10 +41,11 @@
     <br>
     <div class="container" id="app">
         <h1>Whois Search</h1>
-        <div class="ts clearing segment">
+        <p>Search Domain Name, Website, IP and ASN whois data.</p>
+        <div class="whois_search_form">
             <form class="form" @submit.prevent="search()">
-                <label>Target: </label>
-                <input placeholder="AS60614" type="text" v-model="IP">
+                <label>Target: </label><br><br>
+                <input id="input" placeholder="AS60614" type="text" v-model="IP">
                 <br>
                 <br> Test query for <a @click="search('AS60614')">AS60614 </a><span v-if="userIP" style="margin: 0 .2em;">or</span>
                 <a v-if="userIP" @click="search(userIP)">${userIP}</a>
